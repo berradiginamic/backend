@@ -1,0 +1,16 @@
+/* GenreButton.css */
+.genre-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.genre-button img {
+  width: 80px; /* Ajustez la taille de l'image selon vos besoins */
+  height: 80px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,47 @@
+/* Home.css */
+.home-page {
+  position: relative;
+  text-align: center; /* Aligner le texte au centre */
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  margin: 20px 0; /* Ajustez les marges selon vos préférences */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.full-width-image {
+  width: 100%;
+  height: auto; /* Pour maintenir les proportions de l'image */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Espacement égal entre les boutons */
+  position: absolute;
+  bottom: 20px; /* Ajuster la distance depuis le bas */
+  width: 100%;
+}
+
+.decorated-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff; /* Couleur de fond */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  text-decoration: none; /* Supprimer la soulignement du lien par défaut */
+  border: 2px solid #007bff; /* Bordure du bouton */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s ease; /* Animation de transition */
+
+  /* Ajouter un effet de survol */
+  &:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+}
