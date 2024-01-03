@@ -4,9 +4,8 @@ import axios from 'axios';
 
 const RealisateurForm = () => {
   const { id } = useParams();
-  const [realisateur, setRealisateur] = useState({ name: '' }); // Ajoutez les champs nécessaires
+  const [realisateur, setRealisateur] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (id) {
@@ -25,23 +24,13 @@ const RealisateurForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     // Envoyer les données du formulaire à votre endpoint backend pour la création ou la mise à jour du réalisateur
-    const endpoint = id ? `http://localhost:8080/realisateurs/${id}` : 'http://localhost:8080/realisateurs';
-
-    axios({
-      method: id ? 'put' : 'post',
-      url: endpoint,
-      data: realisateur,
-    })
+    axios.post('http://localhost:8080/realisateurs', realisateur)
       .then(response => {
         console.log('Données du formulaire envoyées avec succès', response.data);
         // Rediriger ou effectuer d'autres actions après la création ou la mise à jour
       })
-      .catch(error => {
-        console.error('Erreur lors de l\'envoi des données du formulaire', error.response ? error.response.data : error.message);
-        setError('Erreur lors de la soumission du formulaire. Veuillez vérifier les données.');
-      });
+      .catch(error => console.error('Erreur lors de l\'envoi des données du formulaire', error.response ? error.response.data : error.message));
   };
 
   return (
@@ -53,14 +42,13 @@ const RealisateurForm = () => {
         <form onSubmit={handleFormSubmit}>
           {/* Créer les champs de formulaire en fonction de la structure de votre réalisateur */}
           <label>Nom:</label>
-          <input type="text" value={realisateur.name} onChange={(e) => setRealisateur({ ...realisateur, name: e.target.value })} />
+          <input type="text" value={realisateur.name || ''} onChange={(e) => setRealisateur({ ...realisateur, name: e.target.value })} />
 
           {/* Ajouter d'autres champs selon votre besoin */}
 
           <button type="submit">Soumettre</button>
         </form>
       )}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };

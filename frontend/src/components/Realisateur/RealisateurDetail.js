@@ -6,59 +6,38 @@ const RealisateurDetail = () => {
   const { id } = useParams();
   const [realisateur, setRealisateur] = useState({});
   const [films, setFilms] = useState([]);
-  const [loadingRealisateur, setLoadingRealisateur] = useState(true);
-  const [loadingFilms, setLoadingFilms] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Create a cancel token source
     const source = axios.CancelToken.source();
 
-    const fetchRealisateurDetails = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/realisateurs/${id}`, {
-          cancelToken: source.token,
-        });
-        setRealisateur(response.data);
-        setLoadingRealisateur(false);
-      } catch (error) {
+    // Faire une requête GET à votre endpoint backend pour récupérer les détails du réalisateur
+    axios.get(`http://localhost:8080/realisateurs/${id}`, {
+      cancelToken: source.token,
+    })
+      .then(response => setRealisateur(response.data))
+      .catch(error => {
         if (!axios.isCancel(error)) {
-          setError(`Erreur lors de la récupération des détails du réalisateur avec l'ID ${id}`);
-          setLoadingRealisateur(false);
+          console.error(`Erreur lors de la récupération des détails du réalisateur avec l'ID ${id}`, error);
         }
-      }
-    };
+      });
 
-    const fetchRealisateurFilms = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/realisateurs/${id}/films`, {
-          cancelToken: source.token,
-        });
-        setFilms(response.data);
-        setLoadingFilms(false);
-      } catch (error) {
+    // Faire une requête GET à votre endpoint backend pour récupérer les films du réalisateur
+    axios.get(`http://localhost:8080/realisateurs/${id}/films`, {
+      cancelToken: source.token,
+    })
+      .then(response => setFilms(response.data))
+      .catch(error => {
         if (!axios.isCancel(error)) {
-          setError(`Erreur lors de la récupération des films du réalisateur avec l'ID ${id}`);
-          setLoadingFilms(false);
+          console.error(`Erreur lors de la récupération des films du réalisateur avec l'ID ${id}`, error);
         }
-      }
-    };
+      });
 
-    // Execute both requests concurrently
-    Promise.all([fetchRealisateurDetails(), fetchRealisateurFilms()])
-      .catch(error => console.error('Erreur lors de la récupération des données', error));
-
+    // Cleanup function to cancel the axios requests when the component is unmounted
     return () => {
       source.cancel('Component unmounted');
     };
   }, [id]);
-
-  if (loadingRealisateur || loadingFilms) {
-    return <p>Chargement en cours...</p>;
-  }
-
-  if (error) {
-    return <p style={{ color: 'red' }}>{error}</p>;
-  }
 
   return (
     <div>

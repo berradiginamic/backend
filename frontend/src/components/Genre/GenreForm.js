@@ -1,3 +1,4 @@
+// GenreForm.js
 import React, { useState, useEffect } from 'react';
 import GenreList from './GenreList';
 import axios from 'axios';
@@ -9,16 +10,20 @@ const GenreForm = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Charger la liste des genres lors du montage du composant
     fetchGenres();
   }, []);
 
   const fetchGenres = () => {
+    console.log('Fetching genres...');
     // Faire une requête pour obtenir la liste des genres depuis l'API
     axios.get('http://localhost:8080/genres')
-      .then(response => setGenres(response.data))
-      .catch(error => console.error('Erreur lors de la récupération des genres', error))
-      .finally(() => setLoading(false));
+      .then(response => {
+        console.log('Genres récupérés avec succès:', response.data);
+        setGenres(response.data);
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des genres', error);
+      });
   };
 
   const handleFormSubmit = (e) => {
@@ -28,14 +33,10 @@ const GenreForm = () => {
     axios.post('http://localhost:8080/genres', { name })
       .then(response => {
         console.log('Genre créé avec succès', response.data);
-        // Réinitialiser le champ du formulaire et actualiser la liste des genres
-        setName('');
+        // Actualiser la liste des genres
         fetchGenres();
       })
-      .catch(error => {
-        console.error('Erreur lors de la création du genre', error.response ? error.response.data : error.message);
-        setError('Erreur lors de la création du genre. Veuillez réessayer.');
-      });
+      .catch(error => console.error('Erreur lors de la création du genre', error.response ? error.response.data : error.message));
   };
 
   return (
@@ -47,16 +48,9 @@ const GenreForm = () => {
         <button type="submit">Ajouter</button>
       </form>
 
-      {/* Afficher la liste des genres uniquement s'il y en a */}
-      {genres.length > 0 && (
-        <>
-          <h2>Liste des genres</h2>
-          <GenreList genres={genres} />
-        </>
-      )}
-
-      {/* Afficher les erreurs */}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {/* Afficher la liste des genres */}
+      <h2>Liste des genres</h2>
+      <GenreList genres={genres} />
     </div>
   );
 };

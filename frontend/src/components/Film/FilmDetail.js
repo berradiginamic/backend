@@ -4,22 +4,16 @@ import axios from 'axios';
 const FilmDetail = ({ filmId }) => {
   const [film, setFilm] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Faire une requête GET à votre endpoint backend pour récupérer les détails du film
     axios.get(`http://localhost:8080/films/${filmId}`)
       .then(response => {
-        if (response.data) {
-          setFilm(response.data);
-          setLoading(false);
-        } else {
-          setError("Aucun détail trouvé pour ce film");
-          setLoading(false);
-        }
+        setFilm(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error(`Erreur lors de la récupération des détails du film`, error.response ? error.response.data : error.message);
-        setError("Une erreur s'est produite lors de la récupération des données");
         setLoading(false);
       });
   }, [filmId]);
@@ -30,18 +24,12 @@ const FilmDetail = ({ filmId }) => {
       {loading ? (
         <p>Chargement en cours...</p>
       ) : (
-        <>
-          {error ? (
-            <p>{error}</p>
-          ) : (
-            <div>
-              <p>ID: {film.id}</p>
-              <p>Titre: {film.title}</p>
-              <p>Date de sortie: {new Date(film.releaseDate).toLocaleDateString()}</p>
-              {/* Ajouter d'autres champs selon votre besoin */}
-            </div>
-          )}
-        </>
+        <div>
+          <p>ID: {film.id}</p>
+          <p>Titre: {film.title}</p>
+          <p>Date de sortie: {film.releaseDate}</p>
+          {/* Ajouter d'autres champs selon votre besoin */}
+        </div>
       )}
     </div>
   );

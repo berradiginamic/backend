@@ -1,3 +1,4 @@
+// GenreFilms.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -5,43 +6,22 @@ import { useParams } from 'react-router-dom';
 const GenreFilms = () => {
   const { genreId } = useParams();
   const [films, setFilms] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchGenreFilms = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/films/byGenre/${genreId}`);
-        setFilms(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error(`Error fetching films for the genre ${genreId}`, error);
-        setError("Une erreur s'est produite lors de la récupération des films.");
-        setLoading(false);
-      }
-    };
-
-    if (genreId) {
-      fetchGenreFilms();
-    } else {
-      setLoading(false);
-    }
+    // Make a request to fetch the list of films for the specified genre
+    axios.get(`http://localhost:8080/films/byGenre/${genreId}`)
+      .then(response => setFilms(response.data))
+      .catch(error => console.error(`Error fetching films for the genre ${genreId}`, error));
   }, [genreId]);
 
   return (
     <div>
       <h2>Liste des films pour le genre {genreId}</h2>
-      {loading ? (
-        <p>Chargement en cours...</p>
-      ) : error ? (
-        <p>{error}</p>
-      ) : (
-        <ul>
-          {films.map(film => (
-            <li key={film.id}>{film.title}</li>
-          ))}
-        </ul>
-      )}
+      <ul>
+        {films.map(film => (
+          <li key={film.id}>{film.title}</li>
+        ))}
+      </ul>
     </div>
   );
 };

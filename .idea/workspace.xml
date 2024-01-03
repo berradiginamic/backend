@@ -4,62 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f62d72f-e478-4a07-809c-152c138067eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurFilms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Film/EditFilm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreFilms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Genre/Genres.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/BackendApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/controllers/ActeurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/controllers/FilmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/controllers/GenreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/controllers/RealisateurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/controllers/RoleFilmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/Acteur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/Film.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/Realisateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/RealisateurFilm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/entities/RoleFilm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/ActeurRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/FilmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/GenreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/RealisateurFilmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/RealisateurRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/repositories/RoleFilmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/ActeurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/FilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/GenreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/RealisateurFilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/RealisateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/digi/m0923/services/RoleFilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="0f62d72f-e478-4a07-809c-152c138067eb" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurFilms.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurFilms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Acteur/ActeurList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Film/EditFilm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Film/EditFilm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Film/FilmDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Film/FilmForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Film/FilmList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Film/FilmList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/GenreButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/GenreDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/GenreFilms.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreFilms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/GenreForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/GenreList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/GenreList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Genre/Genres.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Genre/Genres.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Realisateur/RealisateurList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RoleFilm/RoleFilmList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/berra/IdeaProjects/backend/frontend/src/image"
+    "last_opened_file_path": "C:/Users/berra/IdeaProjects/backend"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -114,6 +80,19 @@
       <option name="presentableId" value="Default" />
       <updated>1703236944149</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1704193618482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704193618482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

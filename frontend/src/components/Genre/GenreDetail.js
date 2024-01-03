@@ -7,6 +7,12 @@ const GenreDetail = ({ genreId }) => {
 
   useEffect(() => {
     const fetchGenreDetails = async () => {
+      // Vérifiez si genreId est défini avant de faire la requête
+      if (!genreId) {
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await axios.get(`http://localhost:8080/genres/${genreId}`);
         setGenre(response.data);
@@ -17,12 +23,8 @@ const GenreDetail = ({ genreId }) => {
       }
     };
 
-    if (genreId) {
-      fetchGenreDetails();
-    } else {
-      setLoading(false);
-    }
-  }, [genreId]);
+    fetchGenreDetails();
+  }, [genreId]); // Utilisez genreId comme dépendance
 
   return (
     <div>

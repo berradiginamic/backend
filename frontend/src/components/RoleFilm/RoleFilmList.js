@@ -28,9 +28,7 @@ const RoleFilmList = () => {
         <ul>
           {roleFilms.map(roleFilm => (
             <li key={roleFilm.id}>
-              <Link to={`/rolefilms/${roleFilm.id}`}>{roleFilm.name}</Link> {/* Link to details */}
-              {' | '}
-              <Link to={`/rolefilms/edit/${roleFilm.id}`}>Edit</Link> {/* Link to edit form */}
+              <Link to={`/rolefilms/${roleFilm.id}`}>{roleFilm.name}</Link>
             </li>
           ))}
         </ul>

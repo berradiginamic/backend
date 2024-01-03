@@ -26,7 +26,7 @@ const RoleFilmForm = ({ roleFilmId }) => {
     e.preventDefault();
 
     // Send form data to your backend endpoint for creating or updating the roleFilm
-    const endpoint = roleFilmId ? `http://localhost:8080/rolefilms/${roleFilmId}` : 'http://localhost:8080/rolefilms';
+    const endpoint = roleFilmId ? `http://localhost:8080/rolefilms/roleFilmId` : 'http://localhost:8080/rolefilms';
 
     axios({
       method: roleFilmId ? 'put' : 'post',

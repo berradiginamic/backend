@@ -7,6 +7,7 @@ const ActeurForm = ({ acteurId }) => {
 
   useEffect(() => {
     if (acteurId) {
+      // Faire une requête GET à votre endpoint backend pour récupérer les détails de l'acteur
       axios.get(`http://localhost:8080/api/acteurs/${acteurId}`)
         .then(response => {
           setActeur(response.data);
@@ -21,15 +22,10 @@ const ActeurForm = ({ acteurId }) => {
     }
   }, [acteurId]);
 
-  const handleInputChange = (fieldName, value) => {
-    setActeur({ ...acteur, [fieldName]: value });
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Ajoutez ici la logique de validation si nécessaire
-
+    // Envoyer les données du formulaire à votre endpoint backend pour la création ou la mise à jour de l'acteur
     const endpoint = acteurId ? `http://localhost:8080/acteurs/${acteurId}` : 'http://localhost:8080/acteurs';
 
     axios({
@@ -51,16 +47,11 @@ const ActeurForm = ({ acteurId }) => {
         <p>Chargement en cours...</p>
       ) : (
         <form onSubmit={handleFormSubmit}>
-          {Object.keys(acteur).map(fieldName => (
-            <div key={fieldName}>
-              <label>{fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}:</label>
-              <input
-                type="text"
-                value={acteur[fieldName] || ''}
-                onChange={(e) => handleInputChange(fieldName, e.target.value)}
-              />
-            </div>
-          ))}
+          {/* Créer les champs de formulaire en fonction de la structure de votre acteur */}
+          <label>Nom:</label>
+          <input type="text" value={acteur.name || ''} onChange={(e) => setActeur({ ...acteur, name: e.target.value })} />
+
+          {/* Ajouter d'autres champs selon votre besoin */}
 
           <button type="submit">Soumettre</button>
         </form>
